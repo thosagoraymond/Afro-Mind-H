@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View , Button } from 'react-native';
+import { StyleSheet, Text, View , Button , TouchableOpacity} from 'react-native';
 import Icon from '@expo/vector-icons/Ionicons'
 
 import {
@@ -11,7 +11,7 @@ import {
    } from 'react-navigation'; 
 
 class App extends React.Component {
-  render() {
+  render() { 
     return <AppContainer/>;
   }
 }
@@ -43,11 +43,22 @@ class DashboardScreen extends Component{
   }
 }
 
-class Feed extends Component{
+class Home extends Component{
   render(){
+    const handlePress = () => false
     return(
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-          <Text>Feed</Text>
+         <TouchableOpacity style={styles.stress}>
+            <Text style={styles.text}>
+               Are You Stressed?
+            </Text>
+         </TouchableOpacity>
+
+         <TouchableOpacity style={styles.selfTherapy}>
+            <Text style={styles.text1}>
+               Self Therapy
+            </Text>
+         </TouchableOpacity>
       </View>
     )
   }
@@ -75,7 +86,7 @@ class Profile extends Component{
 
 //Bottom tab navigator
 const DashboardTabNavigator = createBottomTabNavigator({
-  Feed,
+  Home,
   Profile,
   Settings
 },{
@@ -123,5 +134,45 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  stress: {
+    marginRight:50,
+    marginLeft:50,
+    marginTop:10,
+    paddingTop:20,
+    paddingBottom:20,
+    backgroundColor:'purple',
+    borderRadius:75,
+    borderWidth: 1,
+    borderColor: '#fff',
+    alignItems: 'center',
+    width: 150,
+    height: 150
+  },
+  text: {
+    color: 'white',
+    marginTop: 40,
+    fontWeight: 'bold',
+    fontSize: 15,
+  },
+  selfTherapy: {
+    marginRight:50,
+    marginLeft:50,
+    marginTop:10,
+    paddingTop:20,
+    paddingBottom:20,
+    backgroundColor:'purple',
+    borderRadius:60,
+    borderWidth: 1,
+    borderColor: '#fff',
+    alignItems: 'center',
+    width: 120,
+    height: 120
+  },
+  text1: {
+  color: 'white',
+  marginTop: 20,
+  fontWeight: 'bold',
+  fontSize: 15,
   },
 });
