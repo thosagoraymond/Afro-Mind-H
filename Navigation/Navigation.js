@@ -1,5 +1,4 @@
 import React from 'react'
-import { StyleSheet, Text, View , Button , TouchableOpacity} from 'react-native';
 import {
    createSwitchNavigator, 
    createAppContainer, 
@@ -34,7 +33,8 @@ const DashboardTabNavigator = createBottomTabNavigator({
 });
 
 const DashboardStackNavigator = createStackNavigator({
-  DashboardTabNavigator:DashboardTabNavigator
+  Home:Home
+  // DashboardTabNavigator:DashboardTabNavigator
 },
 {
   defaultNavigationOptions: ({navigation}) => {
@@ -47,10 +47,20 @@ const DashboardStackNavigator = createStackNavigator({
 });
 
 const AppDrawerNavigator = createDrawerNavigator({
-  Dashboard:{
-    screen:DashboardStackNavigator
+  Dashboard:{screen:DashboardStackNavigator},
+    Profile:{screen:Profile},
+    Settings:{screen:Settings},
+    Logout:{screen:WelcomeScreen}
+},{
+    navigationOptions:({navigation})=>{
+      const { routeName } = navigation.state.routes
+        [navigation.state.index];
+          return{
+            headerTitle: routeName
+          };
+    }
   }
-});
+);
 
 const AppSwitchNavigator = createSwitchNavigator({
   Welcome:{screen: WelcomeScreen},
@@ -58,5 +68,4 @@ const AppSwitchNavigator = createSwitchNavigator({
 }); 
 
 const AppContainer = createAppContainer(AppSwitchNavigator);
-
 export default AppContainer;
