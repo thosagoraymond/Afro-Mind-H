@@ -9,14 +9,17 @@ import {
    } from 'react-navigation'; 
 import Icon from '@expo/vector-icons/Ionicons'
 
-//bottom nav 
+//bottom nav screen
 import Home from '../screens/Homepage';
 import Profile from '../screens/Profile';
 import Settings from '../screens/Settings';
-//welcome nav
+//welcome screen
 import WelcomeScreen from "../screens/WelcomePage";
-//dashboard nav
+//dashboard nav screen
 import Dashboard from "../screens/DashboardScreen";
+
+//screens
+import SelfTherapyScreen from '../screens/SelfTherapy';
 
 //Bottom tab navigator
 const DashboardTabNavigator = createBottomTabNavigator({
@@ -34,7 +37,8 @@ const DashboardTabNavigator = createBottomTabNavigator({
 });
 
 const DashboardStackNavigator = createStackNavigator({
-  DashboardTabNavigator:DashboardTabNavigator
+  DashboardTabNavigator:DashboardTabNavigator,
+  SelfTherapy: {screen: SelfTherapyScreen}
 },
 {
   defaultNavigationOptions: ({navigation}) => {

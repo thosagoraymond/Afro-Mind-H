@@ -5,6 +5,7 @@ import { StyleSheet, Text, View , Button , TouchableOpacity} from 'react-native'
 class Home extends Component{
   render(){
     const handlePress = () => false
+    const {navigate} = this.props.navigation;
     return(
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
          <TouchableOpacity style={styles.stress}>
@@ -13,7 +14,7 @@ class Home extends Component{
             </Text>
          </TouchableOpacity>
 
-         <TouchableOpacity style={styles.selfTherapy}>
+         <TouchableOpacity style={styles.selfTherapy} onPress={() => navigate('SelfTherapy')}>
             <Text style={styles.text1}>
                Self Therapy
             </Text>
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     marginTop:10,
     paddingTop:20,
     paddingBottom:20,
-    backgroundColor:'purple',
+    backgroundColor:'#ea0000',
     borderRadius:75,
     borderWidth: 1,
     borderColor: '#fff',
