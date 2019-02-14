@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View , Button , TouchableOpacity} from 'react-native';
+import React from 'react';
 import AppContainer from './Navigation/Navigation';
 
 class App extends React.Component {
