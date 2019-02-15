@@ -19,12 +19,13 @@ import Dashboard from "../screens/DashboardScreen";
 
 //screens
 import SelfTherapyScreen from '../screens/SelfTherapy';
+import groupTherapyScreen from '../screens/groupTherapy';
 
 //Bottom tab navigator
 const DashboardTabNavigator = createBottomTabNavigator({
   Home,
   Profile,
-  Settings
+  Settings,
 },{
   navigationOptions:({navigation})=>{
     const { routeName } = navigation.state.routes
@@ -36,13 +37,10 @@ const DashboardTabNavigator = createBottomTabNavigator({
 });
 
 const DashboardStackNavigator = createStackNavigator({
-<<<<<<< HEAD
   DashboardTabNavigator:DashboardTabNavigator,
-  SelfTherapy: {screen: SelfTherapyScreen}
-=======
-  Home:Home
-  // DashboardTabNavigator:DashboardTabNavigator
->>>>>>> 5a9d93058ca37aa51c69beda56a6348afbc638da
+  SelfTherapy: {screen: SelfTherapyScreen},
+  groupTherapy: {screen: groupTherapyScreen},
+  // Home:Home
 },
 {
   defaultNavigationOptions: ({navigation}) => {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
-
 class Home extends Component{
   render(){
     const handlePress = () => false
@@ -14,9 +13,17 @@ class Home extends Component{
             </Text>
          </TouchableOpacity>
 
-         <TouchableOpacity style={styles.selfTherapy} onPress={() => navigate('SelfTherapy')}>
+         <TouchableOpacity style={styles.selfTherapy} 
+           onPress={() => navigate('SelfTherapy')}>
             <Text style={styles.text1}>
                Self Therapy
+            </Text>
+         </TouchableOpacity>
+
+         <TouchableOpacity style={styles.selfTherapy} 
+           onPress={() => navigate('groupTherapy')}>
+            <Text style={styles.text1}>
+               Group Therapy
             </Text>
          </TouchableOpacity>
       </View>
