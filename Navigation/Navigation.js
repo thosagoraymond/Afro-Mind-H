@@ -7,7 +7,6 @@ import {
    createStackNavigator
    } from 'react-navigation'; 
 import Icon from '@expo/vector-icons/Ionicons'
-
 //bottom nav screen
 import Home from '../screens/Homepage';
 import Profile from '../screens/Profile';
@@ -25,8 +24,8 @@ import instructors from '../screens/instructors';
 //Bottom tab navigator
 const DashboardTabNavigator = createBottomTabNavigator({
   Home,
-  Profile,
-  Settings,
+  // Profile,
+  // Settings,
 },{
   navigationOptions:({navigation})=>{
     const { routeName } = navigation.state.routes
@@ -37,12 +36,19 @@ const DashboardTabNavigator = createBottomTabNavigator({
   }
 });
 
+// Custom home page screens
 const DashboardStackNavigator = createStackNavigator({
   DashboardTabNavigator:DashboardTabNavigator,
-  SelfTherapy: {screen: SelfTherapyScreen},
-  groupTherapy: {screen: groupTherapyScreen},
-  instructors: {screen: instructors},
-  
+
+  SelfTherapy: {
+    screen: SelfTherapyScreen
+  },
+  groupTherapy: {
+    screen: groupTherapyScreen
+  },
+  instructors: {
+    screen: instructors
+  }, 
 },
 {
   defaultNavigationOptions: ({navigation}) => {
@@ -54,11 +60,20 @@ const DashboardStackNavigator = createStackNavigator({
   }
 });
 
+// Custom drawer pages 
 const AppDrawerNavigator = createDrawerNavigator({
-  Dashboard:{screen:DashboardStackNavigator},
-    Profile:{screen:Profile},
-    Settings:{screen:Settings},
-    Logout:{screen:WelcomeScreen}
+    Home: { 
+       screen: DashboardStackNavigator
+      },
+    Profile: {
+      screen: Profile
+    },
+    Settings: { 
+      screen: Settings 
+    },
+    Logout: { 
+      screen: WelcomeScreen 
+    }
 },{
     navigationOptions:({navigation})=>{
       const { routeName } = navigation.state.routes
@@ -67,8 +82,7 @@ const AppDrawerNavigator = createDrawerNavigator({
             headerTitle: routeName
           };
     }
-  }
-);
+  });
 
 const AppSwitchNavigator = createSwitchNavigator({
   Welcome:{screen: WelcomeScreen},
