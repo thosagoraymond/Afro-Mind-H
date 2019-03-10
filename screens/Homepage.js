@@ -8,7 +8,8 @@ class Home extends Component{
     const {navigate} = this.props.navigation;
     return(
       <View style={styles.container}>
-         <TouchableOpacity style={styles.stress}>
+         <TouchableOpacity style={styles.stress}
+          onPress={() => navigate('BotChat')}>
             <Text style={styles.text}>
                Are You Stressed?
             </Text>

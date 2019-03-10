@@ -21,6 +21,7 @@ import Dashboard from "../screens/DashboardScreen";
 import SelfTherapyScreen from '../screens/SelfTherapy';
 import groupTherapyScreen from '../screens/groupTherapy';
 import instructors from '../screens/instructors';
+import BotChat from '../screens/BotChat';
 
 //Bottom tab navigator
 const DashboardTabNavigator = createBottomTabNavigator({
@@ -42,7 +43,7 @@ const DashboardStackNavigator = createStackNavigator({
   SelfTherapy: {screen: SelfTherapyScreen},
   groupTherapy: {screen: groupTherapyScreen},
   instructors: {screen: instructors},
-  
+  BotChat: {screen: BotChat},
 },
 {
   defaultNavigationOptions: ({navigation}) => {
