@@ -112,8 +112,8 @@ export default class SelfTherapySteps extends Component {
 
           <ListItem icon>
             <Left>
-              <Button style={{ backgroundColor: "#007AFF" }}>
-                <Icon active name="bicycle"  style={{fontSize: 20, color: 'red'}}/>
+              <Button >
+                <Icon active name="bicycle"  style={{fontSize: 30, color: 'orange'}}/>
               </Button>
             </Left>
             <Body>

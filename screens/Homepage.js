@@ -9,13 +9,7 @@ class Home extends Component{
     return(
       <View style={styles.container}>
          <TouchableOpacity style={styles.stress}
-          onPress={() => {
-            /* 1. Navigate to the Details route with params */
-            this.props.navigation.navigate('BotChat', {
-              itemId: 86,
-              otherParam: 'anything you want here',
-            });
-          }}>
+          onPress={() => navigate('BotChat')}>
             <Text style={styles.text}>
                Are You Stressed?
             </Text>
@@ -88,7 +82,7 @@ const styles = StyleSheet.create({
   color: 'black',
   marginTop: 20,
   // fontWeight: 'bold',
-  fontSize: 20,
+  fontSize: 30,
   }
 });
 
