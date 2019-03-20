@@ -9,7 +9,13 @@ class Home extends Component{
     return(
       <View style={styles.container}>
          <TouchableOpacity style={styles.stress}
-          onPress={() => navigate('BotChat')}>
+          onPress={() => {
+            /* 1. Navigate to the Details route with params */
+            this.props.navigation.navigate('BotChat', {
+              itemId: 86,
+              otherParam: 'anything you want here',
+            });
+          }}>
             <Text style={styles.text}>
                Are You Stressed?
             </Text>

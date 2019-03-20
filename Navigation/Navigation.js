@@ -46,14 +46,17 @@ const DashboardStackNavigator = createStackNavigator({
   BotChat: {screen: BotChat},
 },
 {
-  defaultNavigationOptions: ({navigation}) => {
+  navigationOptions: ({navigation}) => {
+    const { routeName } = navigation.state.routes[navigation.state.index];
     return{
       headerLeft: <Icon style={{paddingLeft:10 }}
       onPress={()=> navigation.openDrawer()} 
-      name="md-menu" size={30} />
+      name="md-menu" size={30} />,
+      headerTitle: routeName
     };
   }
-});
+}
+);
 
 const AppDrawerNavigator = createDrawerNavigator({
   Dashboard:{screen:DashboardStackNavigator},

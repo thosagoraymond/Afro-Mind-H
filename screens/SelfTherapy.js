@@ -1,35 +1,25 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import { ListItem } from 'react-native-elements'
+import { Container, Content, List, ListItem, Text, Icon, Left, Body, Right, Switch, Button } from 'native-base';
+import { StyleSheet, View } from 'react-native';
 
-const list = [
-  {
-    name: 'Amy Farha',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President'
-  },
-  {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
-  },
-]
+//Main components
+import SelfSelfTherapySteps from '../components/selfTherapy/SelfTherapySteps';
+import DiagnosisForm from '../components/selfTherapy/DiagnosisForm';
 
-class SelfTherapy extends Component{
-  render(){
-    return(
-    <View>
-      {
-        list.map((item, i) => (
-          <ListItem
-            key={i}
-            title={item.title}
-            leftIcon={{ name: item.icon }}
-          />
-        ))
-      }
-    </View>
-    )
+export default class SelfTherapy extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      firstTimeUser :false
+    }
+  }
+  render() {
+    const {firstTimeUser} = this.state;
+    return (
+      <View style={{ flex: 1}}>
+          {firstTimeUser == true? <DiagnosisForm/>: <SelfSelfTherapySteps/>}
+      </View>
+    );
   }
 }
-export default SelfTherapy;
